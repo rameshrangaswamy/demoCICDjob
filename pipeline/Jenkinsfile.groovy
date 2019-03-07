@@ -1,9 +1,6 @@
 node('node1') {
 def mavenHome
 mavenHome = tool(name: 'maven-3.5.0', type: 'maven');
-withEnv([
-        'MAVEN_HOME=' + mavenHome,
-        "PATH=${mavenHome}/bin"
 ])
   stage('checkout') 
   {
@@ -16,6 +13,9 @@ withEnv([
   }
 
 //node('node1') {
+withEnv([
+        'MAVEN_HOME=' + mavenHome,
+        "PATH=${mavenHome}/bin"
   stage('build') 
   {
             //steps {
