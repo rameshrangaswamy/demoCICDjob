@@ -1,4 +1,7 @@
-node('node1') {
+node('node1') 
+{
+def mvnHome = tool name: 'maven 3_6_0', type: 'hudson.tasks.Maven$MavenInstallation'
+env.M2_HOME = mvnHome
   stage('checkout') 
   {  
             //steps {
@@ -9,11 +12,7 @@ node('node1') {
   }
 
 //node('node1') {
-def mavenHome = tool(name: 'apache-maven-3.6.0', type: 'maven');
-withEnv([
-        'M2_HOME=' + mavenHome,
-        "PATH=${mavenHome}/bin:${env.PATH}"
-        ])
+
   stage('build') 
   {
             //steps {
