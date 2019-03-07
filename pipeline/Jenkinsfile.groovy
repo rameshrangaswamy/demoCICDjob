@@ -7,7 +7,7 @@ node('node1') {
     stash 'name-of-the-stash'
   }
 }
-node('node2') {
+node('node1') {
   stage('echo') {
             /*steps {
                  coverage tests initialization script
