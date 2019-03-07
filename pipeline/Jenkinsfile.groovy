@@ -12,6 +12,10 @@ env.M2_HOME = mvnHome
   }
 
 //node('node1') {
+withEnv([
+            'MAVEN_HOME=' + mavenHome,
+            "PATH=${mavenHome}/bin:${env.PATH}"
+    ]) 
 
   stage('build') 
   {
