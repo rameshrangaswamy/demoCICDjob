@@ -2,7 +2,7 @@ node('node1') {
 def mavenHome
 withEnv([
         'MAVEN_HOME=' + mavenHome,
-        "PATH=${mavenHome}/bin:${antHome}/bin:${env.PATH}"
+        "PATH=${mavenHome}/bin"
 ])
   stage('checkout') {
             //steps {
@@ -14,7 +14,7 @@ withEnv([
 
 //node('node1') {
   stage('build') {
-      mavenHome = tool(name: 'maven-3.6.0', type: 'maven');
+      mavenHome = tool(name: 'maven-3.5.0', type: 'maven');
             //steps {
                  //coverage tests initialization script
                 sh '''mvn clean org.jacoco:jacoco-maven-plugin:prepare-agent \
