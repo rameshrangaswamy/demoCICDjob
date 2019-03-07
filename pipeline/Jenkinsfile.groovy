@@ -1,10 +1,13 @@
 node('node1') {
 def mavenHome
+mavenHome = tool(name: 'maven-3.5.0', type: 'maven');
 withEnv([
         'MAVEN_HOME=' + mavenHome,
         "PATH=${mavenHome}/bin"
 ])
-  stage('checkout') {
+  stage('checkout') 
+  {
+      
             //steps {
                 // clone project and install dependencies
                 git url: 'https://github.com/rameshrangaswamy/demoCICDjob.git', branch: 'master'
@@ -13,8 +16,8 @@ withEnv([
   }
 
 //node('node1') {
-  stage('build') {
-      mavenHome = tool(name: 'maven-3.5.0', type: 'maven');
+  stage('build') 
+  {
             //steps {
                  //coverage tests initialization script
                 sh '''mvn clean org.jacoco:jacoco-maven-plugin:prepare-agent \
