@@ -8,7 +8,7 @@ node('node1') {
   }
 }
 node('node2') {
-  stage('build') {
+  stage('echo') {
             /*steps {
                  coverage tests initialization script
                 sh '''mvn clean org.jacoco:jacoco-maven-plugin:prepare-agent \
