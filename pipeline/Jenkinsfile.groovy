@@ -9,7 +9,7 @@ node('node1') {
   }
 
 //node('node1') {
-def mavenHome = tool(name: 'Apache Maven-3.6.0', type: 'maven');
+def mavenHome = tool(name: 'apache-maven-3.6.0', type: 'maven');
 withEnv([
         'M2_HOME=' + mavenHome,
         "PATH=${mavenHome}/bin:${env.PATH}"
