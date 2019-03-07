@@ -14,8 +14,8 @@ node('node1')
   {
             //steps {
                  //coverage tests initialization script
-                  sh '''mvn clean org.jacoco:jacoco-maven-plugin:prepare-agent \
-                  install -Dmaven.test.failure.ignore=true || true'''
+                  //sh '''mvn clean org.jacoco:jacoco-maven-plugin:prepare-agent \
+                  //install -Dmaven.test.failure.ignore=true || true'''
                   git url: 'https://github.com/jenkinsci/throttle-concurrent-builds-plugin.git', branch: 'master'
             //}
     unstash 'name-of-the-stash'
