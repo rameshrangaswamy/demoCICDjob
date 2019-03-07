@@ -10,12 +10,16 @@ node('node1')
   }
 
 //node('node1') {
+def mavenHome = tool(name: 'maven-3.6.0', type: 'maven');
+withEnv([
+            'MAVEN_HOME=' + mavenHome,
+            "PATH=${mavenHome}/bin:${env.PATH}"
+    ]) 
   stage('build') 
   {
             //steps {
                  //coverage tests initialization script
-                 sh 'export PATH=$PATH:${M2_HOME}/bin'
-                sh '''mvn clean org.jacoco:jacoco-maven-plugin:prepare-agent \
+                  sh '''mvn clean org.jacoco:jacoco-maven-plugin:prepare-agent \
                   install -Dmaven.test.failure.ignore=true || true'''
             //}
     unstash 'name-of-the-stash'
