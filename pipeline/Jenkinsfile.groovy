@@ -1,3 +1,5 @@
+def steps
+
 node('node1') {
   stage('checkout') {
             steps {
