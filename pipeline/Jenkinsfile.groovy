@@ -1,9 +1,6 @@
 node('node1') {
-def mavenHome = tool(name: 'Apache Maven-3.6.0', type: 'maven');
-
   stage('checkout') 
-  {
-      
+  {  
             //steps {
                 // clone project and install dependencies
                 git url: 'https://github.com/rameshrangaswamy/demoCICDjob.git', branch: 'master'
@@ -12,6 +9,7 @@ def mavenHome = tool(name: 'Apache Maven-3.6.0', type: 'maven');
   }
 
 //node('node1') {
+def mavenHome = tool(name: 'Apache Maven-3.6.0', type: 'maven');
 withEnv([
         'M2_HOME=' + mavenHome,
         "PATH=${mavenHome}/bin:${env.PATH}"
