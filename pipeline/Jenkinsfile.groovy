@@ -1,5 +1,4 @@
 node('node1') {
-    
 withEnv([
                 'MAVEN_HOME=' + mavenHome,
 				'ANT_HOME=' + antHome,
@@ -16,7 +15,7 @@ withEnv([
 //node('node1') {
   stage('build') {
             //steps {
-                 coverage tests initialization script
+                 //coverage tests initialization script
                 sh '''mvn clean org.jacoco:jacoco-maven-plugin:prepare-agent \
                   install -Dmaven.test.failure.ignore=true || true'''
             //}
