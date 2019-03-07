@@ -1,6 +1,6 @@
 node('node1') 
 {
-def mvnHome = tool name: 'maven 3.6.0', type: 'maven'
+def mvnHome = tool name: 'apache-maven-3.6.0', type: 'maven'
 env.M2_HOME = mvnHome
   stage('checkout') 
   {  
