@@ -13,7 +13,7 @@ def mavenHome = tool(name: 'Apache Maven-3.6.0', type: 'maven');
 
 //node('node1') {
 withEnv([
-        'MAVEN_HOME=' + mavenHome,
+        'M2_HOME=' + mavenHome,
         "PATH=${mavenHome}/bin:${env.PATH}"
         ])
   stage('build') 
