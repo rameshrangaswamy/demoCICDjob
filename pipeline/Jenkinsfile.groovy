@@ -1,3 +1,4 @@
+def mavenHome()
 node('node1') {
 withEnv([
         'MAVEN_HOME=' + mavenHome,
