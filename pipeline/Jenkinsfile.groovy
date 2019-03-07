@@ -1,7 +1,5 @@
 node('node1') 
 {
-def mvnHome = tool name: 'apache-maven-3.6.0', type: 'maven'
-env.M2_HOME = mvnHome
   stage('checkout') 
   {  
             //steps {
@@ -12,15 +10,11 @@ env.M2_HOME = mvnHome
   }
 
 //node('node1') {
-withEnv([
-            'MAVEN_HOME=' + mvnHome,
-            "PATH=${mvnHome}/bin:${env.PATH}"
-    ]) 
-
   stage('build') 
   {
             //steps {
                  //coverage tests initialization script
+                 sh 'export PATH=$PATH:$JAVA_HOME/bin/'
                 sh '''mvn clean org.jacoco:jacoco-maven-plugin:prepare-agent \
                   install -Dmaven.test.failure.ignore=true || true'''
             //}
