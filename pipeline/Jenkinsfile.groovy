@@ -1,6 +1,5 @@
 node('node1') {
-def mavenHome
-mavenHome = tool(name: 'maven-3.6.0', type: 'maven');
+def mavenHome = tool(name: 'maven-3.6.0', type: 'maven');
 
   stage('checkout') 
   {
