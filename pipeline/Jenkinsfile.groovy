@@ -15,7 +15,7 @@ mavenHome = tool(name: 'maven-3.5.0', type: 'maven');
 //node('node1') {
 withEnv([
         'MAVEN_HOME=' + mavenHome,
-        "PATH=${mavenHome}/bin"
+        "PATH=${mavenHome}/bin:${env.PATH}"
         ])
   stage('build') 
   {
