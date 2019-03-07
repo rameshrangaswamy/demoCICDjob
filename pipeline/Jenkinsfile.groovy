@@ -1,5 +1,3 @@
-def steps
-
 node('node1') {
   stage('checkout') {
             //steps {
@@ -11,12 +9,12 @@ node('node1') {
 }
 node('node2') {
   stage('build') {
-            //steps {
-                // coverage tests initialization script
+            /*steps {
+                 coverage tests initialization script
                 sh '''mvn clean org.jacoco:jacoco-maven-plugin:prepare-agent \
                   install -Dmaven.test.failure.ignore=true || true'''
-            //}
+            }*/
     unstash 'name-of-the-stash'
-    sh 'make'
+    sh 'echo "test"'
   }
 }
