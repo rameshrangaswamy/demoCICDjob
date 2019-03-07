@@ -1,6 +1,6 @@
 node('node1') 
 {
-def mvnHome = tool name: 'maven 3_6_0', type: 'hudson.tasks.Maven$MavenInstallation'
+def mvnHome = tool name: 'maven 3.6.0', type: 'maven'
 env.M2_HOME = mvnHome
   stage('checkout') 
   {  
