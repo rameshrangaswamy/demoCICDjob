@@ -14,8 +14,7 @@ node('node1')
   {
             //steps {
                  //coverage tests initialization script
-                 sh 'export $M2_HOME'
-                 sh 'export $PATH'
+                 sh 'export PATH=${M2_HOME}/bin'
                 sh '''mvn clean org.jacoco:jacoco-maven-plugin:prepare-agent \
                   install -Dmaven.test.failure.ignore=true || true'''
             //}
