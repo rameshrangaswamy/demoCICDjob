@@ -6,16 +6,15 @@ node('node1') {
             //}
     stash 'name-of-the-stash'
   }
-}
-node('node1') {
+
+//node('node1') {
   stage('echo') {
-            /*steps {
+            //steps {
                  coverage tests initialization script
                 sh '''mvn clean org.jacoco:jacoco-maven-plugin:prepare-agent \
                   install -Dmaven.test.failure.ignore=true || true'''
-            }*/
+            //}
     unstash 'name-of-the-stash'
     sh 'echo "test"'
   }
 }
-//
