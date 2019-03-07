@@ -1,4 +1,7 @@
 node('node1') {
+        tools {
+        maven 'maven'
+    }
   stage('checkout') {
             //steps {
                 // clone project and install dependencies
