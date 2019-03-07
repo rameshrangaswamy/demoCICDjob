@@ -1,7 +1,10 @@
 node('node1') {
-        tools {
-        maven 'maven'
-    }
+    
+withEnv([
+                'MAVEN_HOME=' + mavenHome,
+				'ANT_HOME=' + antHome,
+                "PATH=${mavenHome}/bin:${antHome}/bin:${env.PATH}"
+		])
   stage('checkout') {
             //steps {
                 // clone project and install dependencies
