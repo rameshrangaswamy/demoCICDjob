@@ -12,7 +12,6 @@ stage('checkout')
 throttle(['test_1']) {
     node('node1') {
         echo "Queued"
-    }
 
  //     node('node1') 
   //    {
@@ -21,6 +20,7 @@ throttle(['test_1']) {
                 git url: 'https://github.com/rameshrangaswamy/demoCICDjob.git', branch: 'master'
             //}
 
+  }
   }
   }
   
