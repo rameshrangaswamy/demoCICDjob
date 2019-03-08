@@ -6,15 +6,16 @@ for (i=0;i<items.length;i++){
   items[i].doCancelQueue()  
 }   
 } */
-node('node1') 
-{
-  stage('checkout') 
+stage('checkout') 
   {  
+      node('node1') 
+      {
             //steps {
                 // clone project and install dependencies
                 git url: 'https://github.com/rameshrangaswamy/demoCICDjob.git', branch: 'master'
             //}
-    stash 'name-of-the-stash'
+
+  }
   }
 
 node('node2')
@@ -30,8 +31,7 @@ node('node2')
                   //install -Dmaven.test.failure.ignore=true || true'''
                   git url: 'https://github.com/JeffLi1993/springboot-learning-example.git', branch: 'master'
             //}
-    unstash 'name-of-the-stash'
+    
     sh 'echo "test"'
   }
-}
 }
