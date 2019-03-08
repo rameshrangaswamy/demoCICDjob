@@ -11,7 +11,7 @@ stage('checkout')
       // Throttle of a single operation
 throttle(['test_1']) {
     node('node1') {
-        sh "sleep 500"
+        sh "sleep 10"
         echo "Queued"
     }
 }
@@ -39,4 +39,3 @@ throttle(['test_1']) {
     sh 'echo "test"'
   }
 }
-//
