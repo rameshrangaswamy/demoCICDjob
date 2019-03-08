@@ -17,7 +17,11 @@ node('node1')
     stash 'name-of-the-stash'
   }
 
-node('node2') {
+node('node2')
+{
+  // This limits build concurrency to 1 per branch
+  properties([disableConcurrentBuilds()])
+
   stage('checkout') 
   {
             //steps {
