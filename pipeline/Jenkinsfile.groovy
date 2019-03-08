@@ -18,13 +18,14 @@ stage('checkout')
   }
   }
 
-node('node2')
-{
-  // This limits build concurrency to 1 per branch
-  properties([disableConcurrentBuilds()])
+
 
   stage('checkout') 
+    // This limits build concurrency to 1 per branch
+    properties([disableConcurrentBuilds()])
   {
+      node('node2')
+      {
             //steps {
                  //coverage tests initialization script
                   //sh '''mvn clean org.jacoco:jacoco-maven-plugin:prepare-agent \
