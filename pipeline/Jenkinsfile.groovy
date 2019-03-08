@@ -7,26 +7,14 @@ for (i=0;i<items.length;i++){
 }   
 } */
 stage('checkout') 
-  {  
+{  
       // Throttle of a single operation
 throttle(['test_1']) {
     node('node1') {
-        echo "Queued"
-
- //     node('node1') 
-  //    {
-            //steps {
-                // clone project and install dependencies
-                git url: 'https://github.com/rameshrangaswamy/demoCICDjob.git', branch: 'master'
+            git url: 'https://github.com/rameshrangaswamy/demoCICDjob.git', branch: 'master'
             //}
-
-  }
-  }
-  }
-  
   stage('checkout') 
-    // This limits build concurrency to 1 per branch
-  {
+{
       node('node2')
       {
             //steps {
@@ -37,6 +25,8 @@ throttle(['test_1']) {
             //}
     
     sh 'echo "test"'
+      }
+    }
   }
+ }
 }
-//
