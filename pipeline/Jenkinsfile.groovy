@@ -9,7 +9,7 @@ for (i=0;i<items.length;i++){
 stage('checkout') 
   {  
       // Throttle of a single operation
-throttle() {
+throttle(['test_1']) {
     node('node1') {
         sh "sleep 500"
         echo "Queued"
