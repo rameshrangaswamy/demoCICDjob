@@ -9,16 +9,17 @@ node('node1')
     stash 'name-of-the-stash'
   }
 
-//node('node1') {
-  stage('build') 
+node('node2') {
+  stage('checkout') 
   {
             //steps {
                  //coverage tests initialization script
                   //sh '''mvn clean org.jacoco:jacoco-maven-plugin:prepare-agent \
                   //install -Dmaven.test.failure.ignore=true || true'''
-                  git url: 'https://github.com/jenkinsci/throttle-concurrent-builds-plugin.git', branch: 'master'
+                  git url: 'https://github.com/JeffLi1993/springboot-learning-example.git', branch: 'master'
             //}
     unstash 'name-of-the-stash'
     sh 'echo "test"'
   }
+}
 }
