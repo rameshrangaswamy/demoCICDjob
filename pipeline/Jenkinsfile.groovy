@@ -15,8 +15,8 @@ throttle(['test_1']) {
             //}
   stage('checkout') 
 {
-      node('node2')
-      {
+    //  node('node2')
+     // {
             //steps {
                  //coverage tests initialization script
                   //sh '''mvn clean org.jacoco:jacoco-maven-plugin:prepare-agent \
@@ -25,7 +25,7 @@ throttle(['test_1']) {
             //}
     
     sh 'echo "test"'
-      }
+     // }
     }
   }
  }
