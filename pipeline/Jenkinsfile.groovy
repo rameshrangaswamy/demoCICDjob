@@ -1,11 +1,11 @@
-import hudson.model.*  
+/*import hudson.model.*  
 def q = jenkins.model.Jenkins.getInstance().getQueue()   
 def items = q.getItems()  
 for (i=0;i<items.length;i++){  
   if(items[i].task.getName() == "job_name"){  
   items[i].doCancelQueue()  
 }   
-} 
+} */
 node('node1') 
 {
   stage('checkout') 
@@ -31,4 +31,3 @@ node('node2') {
   }
 }
 }
-//
