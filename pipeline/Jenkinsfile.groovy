@@ -11,10 +11,9 @@ stage('checkout')
       // Throttle of a single operation
 throttle(['test_1']) {
     node('node1') {
-        sh "sleep 10"
         echo "Queued"
     }
-}
+
  //     node('node1') 
   //    {
             //steps {
@@ -22,6 +21,7 @@ throttle(['test_1']) {
                 git url: 'https://github.com/rameshrangaswamy/demoCICDjob.git', branch: 'master'
             //}
 
+  }
   }
   
   stage('checkout') 
