@@ -3,7 +3,7 @@
     maven 'maven'
 }*/
 
-stages('checkout')
+stage('checkout')
 {
     throttle(['test_1'])
     {
