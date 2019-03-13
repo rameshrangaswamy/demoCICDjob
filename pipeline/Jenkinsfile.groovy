@@ -11,11 +11,11 @@ stage('checkout')
         } 
     }
 }
-def mavenHome = tool(name: 'maven', type: 'maven')
+/*def mavenHome = tool(name: 'maven', type: 'maven')
 withEnv([
             'MAVEN_HOME=' + mavenHome,
             "PATH=${mavenHome}/bin:${env.PATH}"
-        ]) {
+        ]){*/
                 stage('build')
                 {
                     throttle(['test_1'])
@@ -28,5 +28,5 @@ withEnv([
                         }
                     }         
                 }
-            }
+            //}
 }
