@@ -1,5 +1,5 @@
-
-
+node ('node1') 
+{
 stage('checkout')
 {
     throttle(['test_1'])
@@ -27,4 +27,5 @@ stage('build')
         
         }
     }         
+}
 }
