@@ -1,3 +1,5 @@
+
+def mavenHome = tool(name: 'maven-3.6.0', type: 'maven');
 withEnv([
         'M2_HOME=' + mavenHome,
         "PATH=${mavenHome}/bin:${env.PATH}"
