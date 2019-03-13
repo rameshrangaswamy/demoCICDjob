@@ -11,7 +11,7 @@ stage('checkout')
         } 
     }
 }
-def mavenHome = tool(name: 'apache-maven-3.6.0', type: 'maven')
+def mavenHome = tool(name: 'maven-1', type: 'maven')
 withEnv([
             'MAVEN_HOME=' + mavenHome,
             "PATH=${mavenHome}/bin:${env.PATH}"
