@@ -1,3 +1,9 @@
+def mavenHome = tool(name: 'maven-3.6.0', type: 'maven')
+withEnv([
+'M2_HOME=' + mavenHome,
+"PATH=${mavenHome}/bin:${env.PATH}"
+]) 
+
 node ('testnode') 
 {
 stage('checkout')
@@ -13,11 +19,6 @@ stage('checkout')
 
 stage('build')
 {
- def mvn_version = 'M2'
- withEnv( [
-                "PATH+MAVEN=${tool mvn_version}/bin"
-        ] ) 
-
     throttle(['test_1'])
     {
         node ('testnode') 
