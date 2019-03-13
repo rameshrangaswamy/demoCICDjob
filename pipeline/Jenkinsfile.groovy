@@ -13,7 +13,12 @@ stage('checkout')
 
 stage('build')
 {
-    def mavenHome = tool(name: 'maven-3.6.0', type: 'maven')
+    
+ def mvn_version = 'M3'
+withEnv( ["PATH+MAVEN=${tool mvn_version}/bin"] ) {
+  //sh "mvn clean package"
+} 
+
     throttle(['test_1'])
     {
         node ('testnode') 
