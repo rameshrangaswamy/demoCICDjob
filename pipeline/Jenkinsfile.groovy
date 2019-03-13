@@ -1,6 +1,6 @@
 
 
-stages('checkout')
+stage('checkout')
 {
     throttle(['test_1'])
     {
