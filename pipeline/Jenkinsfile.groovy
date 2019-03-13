@@ -1,24 +1,27 @@
-stage('stage1-checkout') 
- {  
+tools
+{
+    maven 'maven'
+}
+
+stages('checkout')
+{
     throttle(['test_1'])
     {
         node('node1') 
         {
-            git url: 'https://github.com/rameshrangaswamy/demoCICDjob.git', branch: 'master'
+            checkout scm
         } 
     }
 }
 
- //stage 2
-
- stage('stage2-checkout') 
- {  
+stage('build')
+{
     throttle(['test_1'])
     {
         node('node1') 
         {
-            git url: 'https://github.com/JeffLi1993/springboot-learning-example.git', branch: 'master'
-        } 
-    }
- }
-//
+            sh '''mvn clean org.jacoco:jacoco-maven-plugin:prepare-agent install -Dmaven.test.failure.ignore=true || true'''
+        
+        }
+    }         
+}
