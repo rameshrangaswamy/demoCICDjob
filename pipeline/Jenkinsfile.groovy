@@ -13,11 +13,10 @@ stage('checkout')
 
 stage('build')
 {
-    
- def mvn_version = 'M3'
-withEnv( ["PATH+MAVEN=${tool mvn_version}/bin"] ) {
-  //sh "mvn clean package"
-} 
+ def mvn_version = 'M2'
+ withEnv( [
+                "PATH+MAVEN=${tool mvn_version}/bin"
+        ] ) 
 
     throttle(['test_1'])
     {
