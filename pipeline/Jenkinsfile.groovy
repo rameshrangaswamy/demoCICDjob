@@ -1,9 +1,9 @@
-/*tools
-{
-    maven 'maven'
-}*/
+withEnv([
+        'MAVEN_HOME=' + mavenHome,
+        "PATH=${mavenHome}/bin:${env.PATH}"
+       ]) 
 
-stage('checkout')
+stages('checkout')
 {
     throttle(['test_1'])
     {
