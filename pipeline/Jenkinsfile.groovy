@@ -1,5 +1,5 @@
 withEnv([
-        'MAVEN_HOME=' + mavenHome,
+        'M2_HOME=' + mavenHome,
         "PATH=${mavenHome}/bin:${env.PATH}"
        ]) 
 
