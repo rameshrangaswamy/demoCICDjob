@@ -1,7 +1,7 @@
-tools
+/*tools
 {
     maven 'maven'
-}
+}*/
 
 stages('checkout')
 {
