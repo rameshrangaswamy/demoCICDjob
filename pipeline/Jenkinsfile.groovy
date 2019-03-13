@@ -23,7 +23,7 @@ withEnv([
                         node ('testnode') 
                         {   
                             sh "echo $mavenHome"
-                            sh "${mavenHome}/bin/mvn clean install"
+                            sh "${mavenHome}/bin/mvn clean package"
                         
                         }
                     }         
