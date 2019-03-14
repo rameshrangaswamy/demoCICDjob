@@ -4,15 +4,13 @@ node ('testnode')
     {
             checkout scm     
     }
-}
     stage('stage2')
     {
         throttle(['test_1'])
         {
-            node ('node1') 
+            node ('testnode') 
             {   
                 checkout scm
-                sh "mvn clean package"
             
             }
         }         
@@ -21,17 +19,15 @@ node ('testnode')
     {
         throttle(['test_1'])
         {
-            node ('node1') 
+            node ('testnode') 
             {   
                 checkout scm
             
             }
         }         
     }
-node ('testnode')
-  {
         stage('stage4')
     {
          sh "echo $M2_HOME"         
     }
-  }
+}
