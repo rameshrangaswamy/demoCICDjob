@@ -1,3 +1,5 @@
+                        node ('testnode') 
+                        {   
 def mavenHome = tool(name: 'maven', type: 'maven')
 withEnv([
             'MAVEN_HOME=' + mavenHome,
@@ -17,3 +19,4 @@ withEnv([
                     }         
                 }
             }
+                        }
