@@ -4,6 +4,7 @@ node ('testnode')
     {
             checkout scm     
     }
+}
     stage('stage2')
     {
         throttle(['test_1'])
@@ -26,8 +27,10 @@ node ('testnode')
             }
         }         
     }
+node ('testnode')
+  {
         stage('stage4')
     {
          sh "echo $M2_HOME"         
     }
-}
+  }
