@@ -1,7 +1,7 @@
-node ('testnode') 
-{
+//node ('testnode') 
+//{
 
-stage('stage1')
+/*stage('stage1')
 {
     //throttle(['test_1'])
     //{
@@ -16,20 +16,21 @@ withEnv([
             'MAVEN_HOME=' + mavenHome,
             "PATH=${mavenHome}/bin:${env.PATH}"
         ]){*/
-                stage('stage2-build')
+                stage('checkout & build')
                 {
                     throttle(['test_1'])
                     {
                         node ('testnode') 
                         {   
                             //sh "echo $mavenHome"
+                            checkout scm
                             sh "mvn clean package"
                         
                         }
                     }         
                 }
             //}
-stage('stage3')
+/*stage('stage3')
 {
     throttle(['test_1'])
     {
@@ -52,4 +53,4 @@ stage('stage4')
        //} 
     //}
 }
-}
+}*/
