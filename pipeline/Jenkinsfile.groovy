@@ -8,7 +8,7 @@ node ('testnode')
     {
         throttle(['test_1'])
         {
-            node ('node1') 
+            node ('testnode') 
             {   
                 checkout scm
             
@@ -19,7 +19,7 @@ node ('testnode')
     {
         throttle(['test_1'])
         {
-            node ('node1') 
+            node ('testnode') 
             {   
                 checkout scm
             
