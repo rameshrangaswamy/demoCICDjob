@@ -1,22 +1,32 @@
-                        node ('testnode') 
-                        {   
-def mavenHome = tool(name: 'maven', type: 'maven')
-withEnv([
-            'MAVEN_HOME=' + mavenHome,
-            "PATH=${mavenHome}/bin:${env.PATH}"
-        ]){
-                stage('checkout & build')
-                {
-                    throttle(['test_1'])
-                    {
-                        node ('testnode') 
-                        {   
-                            //sh "echo $mavenHome"
-                            checkout scm
-                            sh "mvn clean package"
-                        
-                        }
-                    }         
-                }
+node ('testnode')
+{
+    stage('stage1')
+    {
+            checkout scm     
+    }
+
+    stage('stage2')
+    { 
+                checkout scm   
+    }
+
+    stage('stage3')
+    { 
+                checkout scm   
+    }
+}
+    stage('stage4')
+    {
+        throttle(['test_1'])
+        {
+            node ('node1') 
+            {   
+                checkout scm
+            
             }
-                        }
+        }         
+    }
+        stage('stage5')
+    {
+         sh "echo $M2_HOME"         
+    }
