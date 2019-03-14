@@ -11,6 +11,7 @@ node ('testnode')
             node ('node1') 
             {   
                 checkout scm
+                sh ""$M2_HOME/bin/" mvn clean package"
             
             }
         }         
