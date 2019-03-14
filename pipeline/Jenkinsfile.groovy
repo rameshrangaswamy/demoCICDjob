@@ -13,7 +13,7 @@ withEnv([
                         {   
                             //sh "echo $mavenHome"
                             checkout scm
-                                    sh "${mavenHome}/bin/mvn clean package"
+                             sh "${mavenHome}/bin/mvn clean package"
                         
                         }
                     }         
