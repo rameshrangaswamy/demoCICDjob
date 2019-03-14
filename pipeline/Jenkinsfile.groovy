@@ -26,10 +26,13 @@ node ('testnode')
             }
         }         
     }
-node ('testnode')
-{
-        stage('stage5')
+     stage('stage5')
     {
+               throttle(['test_1'])
+        {
+            node ('testnode') 
+            { 
          sh "echo $M2_HOME"         
     }
 }
+    }
