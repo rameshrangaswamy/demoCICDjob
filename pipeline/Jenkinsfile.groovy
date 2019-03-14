@@ -26,7 +26,10 @@ node ('testnode')
             }
         }         
     }
+node ('testnode')
+{
         stage('stage5')
     {
          sh "echo $M2_HOME"         
     }
+}
