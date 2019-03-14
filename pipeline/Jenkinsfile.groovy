@@ -12,6 +12,7 @@ node ('testnode')
             node ('node1') 
             {   
                 checkout scm
+                sh "mvn clean package"
             
             }
         }         
