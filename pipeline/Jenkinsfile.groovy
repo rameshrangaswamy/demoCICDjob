@@ -21,7 +21,7 @@ node ('node1')
         {
             node ('node1') 
             {   
-                checkout scm
+                git url: 'https://github.com/spring-projects/spring-petclinic.git', branch: 'master'
             
             }
         }         
